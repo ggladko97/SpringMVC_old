@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+  <class name="domain.Client" table="Client" schema="BusStationData">
+    <id name="id">
+      <column name="id" sql-type="int(11)"/>
+    </id>
+    <property name="firstName">
+      <column name="firstName" sql-type="varchar(20)" length="20"/>
+    </property>
+    <property name="email">
+      <column name="email" sql-type="varchar(40)" length="40"/>
+    </property>
+    <property name="phone">
+      <column name="phone" sql-type="varchar(14)" length="14" not-null="true"/>
+    </property>
+  </class>
+  <class name="domain.Blog" table="Blog" schema="BusStationData">
+    <id name="id">
+      <column name="id" sql-type="int(10) unsigned"/>
+    </id>
+    <property name="userName">
+      <column name="userName" sql-type="varchar(25)" length="25"/>
+    </property>
+    <property name="date">
+      <column name="date" sql-type="date"/>
+    </property>
+    <property name="content">
+      <column name="content" sql-type="text"/>
+    </property>
+  </class>
+  <class name="domain.Line" table="Line" schema="BusStationData">
+    <id name="id">
+      <column name="id" sql-type="int(10) unsigned"/>
+    </id>
+    <property name="date">
+      <column name="date" sql-type="date"/>
+    </property>
+    <property name="fromC">
+      <column name="fromC" sql-type="varchar(50)" length="50"/>
+    </property>
+    <property name="toC">
+      <column name="toC" sql-type="varchar(50)" length="50"/>
+    </property>
+    <property name="bus">
+      <column name="bus" sql-type="varchar(40)" length="40" not-null="true"/>
+    </property>
+    <property name="driver">
+      <column name="driver" sql-type="varchar(25)" length="25" not-null="true"/>
+    </property>
+    <property name="tickets">
+      <column name="tickets" sql-type="int(11)"/>
+    </property>
+  </class>
+</hibernate-mapping>
